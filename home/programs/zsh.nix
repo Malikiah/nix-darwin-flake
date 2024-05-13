@@ -1,0 +1,72 @@
+{ pkgs, ... }:
+let 
+  zsh-autosuggestions = "source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+  zsh-syntax-highlighting = "source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
+  
+  zshrc = builtins.readFile dotfiles/config/zsh/zshrc;
+  zshenv = builtins.readFile dotfiles/config/zsh/zshenv;
+
+  zshrc_full = zshrc + "\n" + zsh-autosuggestions + "\n" + zsh-syntax-highlighting;
+
+in
+{
+#  home.file."zshrc" = {
+#    enable = true;
+#    executable = true;
+#    recursive = false;
+#    text = zshrc_full;
+#    target = ".zshrc";
+#    };
+#
+#  home.file."zshenv" = {
+#    enable = true;
+#    executable = true;
+#    recursive = false;
+#    source = dotfiles/zshenv;
+#    target = ".zshenv";
+#    };
+#
+#  home.file."powerlevel10k-theme" = {
+#    enable = true;
+#    executable = true;
+#    recursive = false;
+#    source = dotfiles/powerlevel10.zsh-theme;
+#    target = ".config/powerlevel10k/powerlevel10k.zsh-theme";
+#    };
+
+  home.file."powerlevel10k" = {
+    enable = true;
+    executable = true;
+    recursive = false;
+    source = dotfiles/config/zsh/p10k.zsh;
+    target = ".config/zsh/p10k.zsh";
+    };
+
+  programs.zsh = {
+    enable = true;
+    dotDir = ".config/zsh";
+    autosuggestion = {
+      enable = true;
+    };
+    syntaxHighlighting = {
+        enable = true;
+      };
+    initExtra = zshrc;
+    initExtraFirst = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      test -f ~/.config/zsh/p10k.zsh && source ~/.config/zsh/p10k.zsh
+      '';
+    envExtra = zshenv;
+    zplug = {
+      enable = true;
+      plugins = [
+      { 
+        name="romkatv/powerlevel10k";
+        tags = [ as:theme depth:1 ]; 
+      }
+
+      ];
+      };
+    };
+
+}
