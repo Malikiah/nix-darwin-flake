@@ -17,6 +17,7 @@
       system = "aarch64-darwin"; 
       modules = [ 
       ./darwin-configuration.nix
+ #     ./security.nix
       home-manager.darwinModules.home-manager{
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

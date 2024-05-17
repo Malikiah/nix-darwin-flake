@@ -1,9 +1,10 @@
 { config, pkgs, lib, inputs, ... }:
 {
   imports = [
-    ./services/yabai.nix
-    ./services/skhd.nix
-    ./security.nix
+    ./services/brew.nix
+#    ./services/yabai.nix
+#    ./services/skhd.nix
+#    ./services/monitorcontrol.nix
   ];
   services.nix-daemon.enable = true;
 
@@ -11,20 +12,9 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ 
     pkgs.neovim
+#    pkgs.yabai
     ];
 
-  homebrew = {
-    enable = true;
-    brews = [
-      {
-        name = "orion";
-      }
-      {
-        name = "brave";
-      }
-
-    ];
-  };
   # Auto upgrade nix package and the daemon service.
   # nix.package = pkgs.nix;
 
