@@ -10,30 +10,6 @@ let
 
 in
 {
-#  home.file."zshrc" = {
-#    enable = true;
-#    executable = true;
-#    recursive = false;
-#    text = zshrc_full;
-#    target = ".zshrc";
-#    };
-#
-#  home.file."zshenv" = {
-#    enable = true;
-#    executable = true;
-#    recursive = false;
-#    source = dotfiles/zshenv;
-#    target = ".zshenv";
-#    };
-#
-#  home.file."powerlevel10k-theme" = {
-#    enable = true;
-#    executable = true;
-#    recursive = false;
-#    source = dotfiles/powerlevel10.zsh-theme;
-#    target = ".config/powerlevel10k/powerlevel10k.zsh-theme";
-#    };
-
   home.file."powerlevel10k" = {
     enable = true;
     executable = true;

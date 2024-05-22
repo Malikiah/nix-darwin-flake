@@ -2,7 +2,7 @@
 let
   terminal = "exec-and-forget open -na ${pkgs.alacritty}/Applications/Alacritty.app";
   browser = "exec-and-forget open -na /Applications/Orion.app";
-  monitorcontrol = "exec-and-forget open -na ${pkgs.monitorcontrol}";
+  monitorcontrol = "exec-and-forget open -na ${pkgs.monitorcontrol}/Applications/MonitorControl.app";
 
   aerospace = ''
     # Place a copy of this config to ~/.aerospace.toml
@@ -50,16 +50,16 @@ let
     key-mapping.preset = 'qwerty'
 
     [workspace-to-monitor-force-assignment]
-    1 = 'main'                            # Monitor sequence number from left to right. 1-based indexing
-    2 = 'main'                       # Main monitor
-    3 = 'main'                 # Non-main monitor in case when there are only two monitors
-    4 = ['built-in Retina Display', 'main']                  # Case insensitive regex substring
-    5 = ['built-in Retina Display', 'main']  # Case insensitive regex match
-    6 = ['ES07D03 (1)', 'main']
-    7 = ['ES07D03 (1)', 'main'] # You can specify multiple patterns. The first matching pattern will be used
-    8 = []
-    9 = []
-    0 = []
+    1 = ['main']                # Monitor sequence number from left to right. 1-based indexing
+    2 = ['main']                     # Main monitor
+    3 = ['main']                 # Non-main monitor in case when there are only two monitors
+    4 = ['main']                  # Case insensitive regex substring
+    5 = ['main']  # Case insensitive regex match
+    6 = ['main']
+    7 = [3, 'main'] # You can specify multiple patterns. The first matching pattern will be used
+    8 = [3, 'main']
+    9 = [1, 'main']
+    0 = [1, 'main']
 
     # Gaps between windows (inner-*) and between monitor edges (outer-*).
     # Possible values:
@@ -111,7 +111,7 @@ let
     #cmd-j = []
     #cmd-k = []
 
-    alt-q = 'close'
+    cmd-q = 'close'
 
     cmd-alt-r = 'reload-config'
 

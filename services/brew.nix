@@ -38,6 +38,8 @@
       "ableton-live-suite@10"
       "ilok-license-manager"
       "android-file-transfer"
+      "steam"
+      "arc"
     ];
   };
 }
