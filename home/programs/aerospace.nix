@@ -15,7 +15,6 @@ let
     # 'start-at-login' needs to be 'true' for 'after-login-command' to work
     # Available commands: https://nikitabobko.github.io/AeroSpace/commands
     after-login-command = [
-      '${monitorcontrol}'
     ]
     
     # You can use it to add commands that run after AeroSpace startup.

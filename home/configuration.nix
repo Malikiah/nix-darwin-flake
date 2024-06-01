@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{config, pkgs, darwinPackages, ...}:
 {
   programs.home-manager.enable = true;
 
@@ -10,16 +10,12 @@
     ./programs/nvim.nix
   ];
   home.username = "default";
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
   home.packages = [
-    pkgs.alacritty
-    pkgs.git
-    pkgs.monitorcontrol
-    pkgs.zsh
-    pkgs.zsh-autosuggestions
-    pkgs.zsh-syntax-highlighting
-    pkgs.wireshark
-    pkgs.jankyborders
+    #pkgs.zsh-autosuggestions
+    #pkgs.zsh-syntax-highlighting
+    #pkgs.jankyborders
+    #pkgs.darwin.moltenvk
     #pkgs.zsh-powerlevel10k
   ];
   home.sessionVariables = {

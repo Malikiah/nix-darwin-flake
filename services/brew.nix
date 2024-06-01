@@ -1,27 +1,41 @@
 {...}: {
   homebrew = {
     enable = true;
+    brewPrefix = "/opt/homebrew/bin";
     global = {
       brewfile = true;
     };
+
     brews = [
-      "earthly"
-    ];
+      "zsh"
+      "zsh-autosuggestions"
+      "zsh-syntax-highlighting"
+      "neovim"
+      "molten-vk"
+      "openvpn"
+      "ansible"
+      "git"
+      "git-lfs"
+      "borders"
+      "jakehilborn/jakehilborn/displayplacer"
+     ];
 
     taps = [
-      "cloudflare/cloudflare"
-      "earthly/earthly"
       "homebrew/bundle"
       "homebrew/cask-fonts"
       "homebrew/services"
-    ];
+      "cloudflare/cloudflare"
+      "earthly/earthly"
+      "FelixKratz/formulae"
+      ];
+
     casks = [
       "nikitabobko/tap/aerospace"
-      "orion"
+      "alacritty"
       "little-snitch"
       "micro-snitch"
       "launchbar"
-      #"vmware-fusion"
+      "vmware-fusion"
       "affinity-designer"
       "affinity-photo"
       "nextcloud"
@@ -30,6 +44,7 @@
       "bitwarden"
       "mullvadvpn"
       "mullvad-browser"
+      "firefox"
       "obsidian"
       "burp-suite"
       "brave-browser"
@@ -39,7 +54,12 @@
       "ilok-license-manager"
       "android-file-transfer"
       "steam"
+      "wireshark"
       "arc"
+      "monitorcontrol"
+      "whisky"
+      "vagrant"
+      "vagrant-vmware-utility"
     ];
   };
 }

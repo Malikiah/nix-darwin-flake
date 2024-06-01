@@ -2,17 +2,14 @@
 {
   imports = [
     ./services/brew.nix
-#    ./services/yabai.nix
-#    ./services/skhd.nix
-#    ./services/monitorcontrol.nix
+    ./services/displayplacer.nix
+    #./services/monitorcontrol.nix
   ];
   services.nix-daemon.enable = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ 
-    pkgs.neovim
-#    pkgs.yabai
     ];
 
   # Auto upgrade nix package and the daemon service.
@@ -34,7 +31,6 @@
   system.stateVersion = 4;
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "x86_64-darwin";
+  nixpkgs.hostPlatform = "aarch64-darwin";
   users.users.default.home = "/Users/default";
-
 }

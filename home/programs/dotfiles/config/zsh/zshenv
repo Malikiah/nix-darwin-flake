@@ -1,4 +1,4 @@
 alias ls='ls -lah --color=auto -F'
 alias grep='grep --color'
-alias ssh-kali='ssh default@172.16.90.128'
-
+alias ssh-kali='ssh default@172.16.90.131'
+PATH=$PATH:/opt/homebrew/bin
