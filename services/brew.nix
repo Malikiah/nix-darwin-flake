@@ -60,6 +60,8 @@
       "whisky"
       "vagrant"
       "vagrant-vmware-utility"
+      "discord"
+      "elgato-camera-hub"
     ];
   };
 }
