@@ -3,6 +3,8 @@
   imports = [
     ./services/brew.nix
     ./services/displayplacer.nix
+    #./services/yabai.nix
+    #./services/skhd.nix
     #./services/monitorcontrol.nix
   ];
   services.nix-daemon.enable = true;

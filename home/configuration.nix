@@ -5,7 +5,7 @@
   imports = [
     ./programs/aerospace.nix
     ./programs/alacritty.nix
-#    ./programs/yabai.nix
+    ./programs/yabai.nix
     ./programs/zsh.nix
     ./programs/nvim.nix
   ];

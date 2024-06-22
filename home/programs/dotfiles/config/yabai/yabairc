@@ -6,31 +6,19 @@ sudo yabai --load-sa
 
 # global settings
 yabai -m config \
-	focus_follows_mouse on \
 	mouse_follows_focus on \
 	focus_follows_mouse autoraise \
 	window_origin_display default \
 	window_placement second_child \
 	window_zoom_persist on \
-	window_shadow on \
-	window_animation_duration 0.0 \
-	window_animation_frame_rate 120.0 \
-	window_opacity_duration 0.0 \
-	window_border on \
-	window_border_width 12.0 \
-	window_active_border_color 0xff775759 \
-	normal_window_border_color 0xff555555 \
-	active_window_opacity 1.0 \
-	normal_window_opacity 1.0 \
-	window_opacity on \
-	insert_feedback_color 0xffd75f5f \
+	window_shadow off \
 	split_ratio 0.50 \
 	split_type auto \
 	auto_balance on \
-	top_padding 6 \
-	bottom_padding 6 \
-	left_padding 6 \
-	right_padding 6 \
+	top_padding 12 \
+	bottom_padding 12 \
+	left_padding 12 \
+	right_padding 12 \
 	window_gap 12 \
 	layout bsp \
 	mouse_modifier fn \
@@ -42,5 +30,9 @@ yabai -m config \
 #yabai -m rule --add app="^Digital Color Meter$" sticky=on layer=above manage=off
 #yabai -m window --toggle border
 
-echo "yabai configuration loaded.."
+# JankyBorders
+/opt/homebrew/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0
 
+open -na /Applications/MonitorControl.app
+
+echo "yabai configuration loaded.."

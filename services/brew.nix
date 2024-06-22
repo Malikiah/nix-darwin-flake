@@ -18,6 +18,10 @@
       "git-lfs"
       "borders"
       "jakehilborn/jakehilborn/displayplacer"
+      "qemu"
+      "7zip"
+      "koekeishiya/formulae/yabai"
+      "koekeishiya/formulae/skhd"
      ];
 
     taps = [
@@ -30,7 +34,8 @@
       ];
 
     casks = [
-      "nikitabobko/tap/aerospace"
+     # "nikitabobko/tap/aerospace"
+      "monitorcontrol"
       "alacritty"
       "little-snitch"
       "micro-snitch"
@@ -56,12 +61,19 @@
       "steam"
       "wireshark"
       "arc"
-      "monitorcontrol"
       "whisky"
-      "vagrant"
-      "vagrant-vmware-utility"
       "discord"
-      "elgato-camera-hub"
+      "utm"
+      "crossover"
+      "blockblock"
+      "knockknock"
+      "do-not-disturb"
+      "taskexplorer"
+      "reikey"
+      "netiquette"
+      "ransomwhere"
+      "KextViewr"
+      "whatsyoursign"
     ];
   };
 }

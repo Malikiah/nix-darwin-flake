@@ -18,7 +18,7 @@
 #
 #   keysym       = <mod> '-' <key> | <key>
 #
-# mod          = 'modifier keyword' | <mod> '+' <mod>
+#   mod          = 'modifier keyword' | <mod> '+' <mod>
 #
 #   key          = <literal> | <keycode>
 #
@@ -77,72 +77,84 @@
 # ############################################################### #
 
 # Restart Yabai
-alt + shift - r : yabai --restart-service;
+cmd + ctrl - r : yabai --restart-service;
 
 # Restart SHKD
-alt + shift - s : skhd --restart-service;
+cmd + ctrl - s : skhd --restart-service;
 
 #FOCUS####################################
 # FOCUS DISPLAY to the Left and Right
-alt - u : yabai -m display --focus west;
-alt - i : yabai -m display --focus east;
+cmd - y : yabai -m display --focus west;
+cmd - o : yabai -m display --focus east;
 
 # FOCUS WINDOW on Current Display Next and Previous
-alt - k : yabai -m window --focus north;
-alt - l : yabai -m window --focus east;
-alt - j : yabai -m window --focus south;
-alt - h : yabai -m window --focus west;
+cmd - k : yabai -m window --focus north;
+cmd - l : yabai -m window --focus east;
+cmd - j : yabai -m window --focus south;
+cmd - h : yabai -m window --focus west;
 
  # FOCUS SPACE on Active Display Forwards and Backwards
-alt - y : yabai -m space --focus prev;
-alt - o : yabai -m space --focus next;
+cmd - u : yabai -m space --focus prev;
+cmd - i : yabai -m space --focus next;
 
  # FOCUS SPACE 1-10 and fowards and backwards
-alt - 1 : yabai -m space --focus 1;
-alt - 2 : yabai -m space --focus 2;
-alt - 3 : yabai -m space --focus 3;
-alt - 4 : yabai -m space --focus 4;
-alt - 5 : yabai -m space --focus 5;
-alt - 6 : yabai -m space --focus 6;
-alt - 7 : yabai -m space --focus 7;
-alt - 8 : yabai -m space --focus 8;
-alt - 9 : yabai -m space --focus 9;
-alt - 0 : yabai -m space --focus 10;
+cmd - 1 : yabai -m space --focus 1;
+cmd - 2 : yabai -m space --focus 2;
+cmd - 3 : yabai -m space --focus 3;
+cmd - 4 : yabai -m space --focus 4;
+cmd - 5 : yabai -m space --focus 5;
+cmd - 6 : yabai -m space --focus 6;
+cmd - 7 : yabai -m space --focus 7;
+cmd - 8 : yabai -m space --focus 8;
+cmd - 9 : yabai -m space --focus 9;
+cmd - 0 : yabai -m space --focus 10;
 
 
 #WINDOW MOVEMENT##########################
 # TOGGLE FULLSCREEN on Active Window
-alt - f : yabai -m window --toggle zoom-fullscreen && yabai -m space --toggle padding;
+cmd + shift - f : yabai -m window --toggle zoom-fullscreen && yabai -m space --toggle padding;
+
+alt + shift -f : yabai -m window --toggle native-fullscreen
 #
 # CLOSE Active Window
-alt - q : yabai -m window --close;
+cmd - q : yabai -m window --close;
 
 # MOVE WINDOW within a space
-alt + shift - k : yabai -m window --swap north;
-alt + shift - l : yabai -m window --swap east;
-alt + shift - j : yabai -m window --swap south;
-alt + shift - h : yabai -m window --swap west;
+cmd + shift - k : yabai -m window --swap north;
+cmd + shift - l : yabai -m window --swap east;
+cmd + shift - j : yabai -m window --swap south;
+cmd + shift - h : yabai -m window --swap west;
 
-alt + shift - y : yabai -m window --space prev;
-alt + shift - o : yabai -m window --space next;
+cmd + shift - u : yabai -m window --space prev;
+cmd + shift - i : yabai -m window --space next;
 
 # MOVE WINDOW to the Left or Right Display
-alt + shift - i : yabai -m window --display east; yabai -m display --focus east;
-alt + shift - u : yabai -m window --display west; yabai -m display --focus west;
+cmd + shift - o : yabai -m window --display east; yabai -m display --focus east;
+cmd + shift - y : yabai -m window --display west; yabai -m display --focus west;
 
 # MOVE WINDOW to a Specified Space 1-10
-alt + shift - 1 : yabai -m window --space 1;
-alt + shift - 2 : yabai -m window --space 2;
-alt + shift - 3 : yabai -m window --space 3;
-alt + shift - 4 : yabai -m window --space 4;
-alt + shift - 5 : yabai -m window --space 5;
-alt + shift - 6 : yabai -m window --space 6;
-alt + shift - 7 : yabai -m window --space 7;
-alt + shift - 8 : yabai -m window --space 8;
-alt + shift - 9 : yabai -m window --space 9;
-alt + shift - 0 : yabai -m window --space 10;
+cmd + shift - 1 : yabai -m window --space 1;
+cmd + shift - 2 : yabai -m window --space 2;
+cmd + shift - 3 : yabai -m window --space 3;
+cmd + shift - 4 : yabai -m window --space 4;
+cmd + shift - 5 : yabai -m window --space 5;
+cmd + shift - 6 : yabai -m window --space 6;
+cmd + shift - 7 : yabai -m window --space 7;
+cmd + shift - 8 : yabai -m window --space 8;
+cmd + shift - 9 : yabai -m window --space 9;
+cmd + shift - 0 : yabai -m window --space 10;
 
 
 
 # Applications
 
+# Screenshot Utility
+# This is bound to what the default is in MacOS maintaing the ease
+# of use from one config file.
+cmd + shift - s : skhd -k "cmd + ctrl - 5";
+
+#Terminal
+cmd + shift - t : open -na /Applications/Alacritty.app;
+
+#Browser
+cmd + shift - b : open -na /Applications/Arc.app;

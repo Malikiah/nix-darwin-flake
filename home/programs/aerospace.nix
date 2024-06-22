@@ -1,8 +1,9 @@
 {pkgs, lib, ...}:
 let
-  terminal = "exec-and-forget open -na ${pkgs.alacritty}/Applications/Alacritty.app";
-  browser = "exec-and-forget open -na /Applications/Orion.app";
-  monitorcontrol = "exec-and-forget open -na ${pkgs.monitorcontrol}/Applications/MonitorControl.app";
+  Terminal = "exec-and-forget open -na /Applications/Alacritty.app";
+  Browser = "exec-and-forget open -na /Applications/Arc.app";
+  ScreenshotUtility = "exec-and-forget open -na Screenshot";
+  MonitorControl = "exec-and-forget open -na ${pkgs.monitorcontrol}/Applications/MonitorControl.app";
 
   aerospace = ''
     # Place a copy of this config to ~/.aerospace.toml
@@ -119,10 +120,13 @@ let
     cmd-alt-h = 'macos-native-minimize'
 
     #Terminal
-    alt-enter = '${terminal}'
+    alt-enter = '${Terminal}'
 
     #Browser
-    alt-b = '${browser}'
+    alt-b = '${Browser}'
+
+    #Screenshot Utility
+    alt-s = '${ScreenshotUtility}'
     
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
