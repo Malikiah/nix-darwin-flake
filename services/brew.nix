@@ -35,6 +35,7 @@
 
     casks = [
      # "nikitabobko/tap/aerospace"
+      "monero-wallet"
       "monitorcontrol"
       "alacritty"
       "little-snitch"
@@ -49,7 +50,8 @@
       "bitwarden"
       "mullvadvpn"
       "mullvad-browser"
-      "firefox"
+      #"librewolf"
+      "tor-browser"
       "obsidian"
       "burp-suite"
       "brave-browser"
@@ -60,7 +62,6 @@
       "android-file-transfer"
       "steam"
       "wireshark"
-      "arc"
       "whisky"
       "discord"
       "utm"
