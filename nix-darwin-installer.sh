@@ -31,6 +31,9 @@ else
   echo "Xcode Command Line Tools are already installed."
 fi
 
+echo "Cloning the nix-darwin-flake repository https://github.com/Malikiah/nix-darwin-flake.git."
+git clone https://github.com/Malikiah/nix-darwin-flake.git /etc/nix-darwin
+
 # Check if Nix is installed.
 if ! command -v nix >/dev/null 2>&1; then
   echo "Nix is not installed. Installing Nix using the DeterminateSystems nix-installer..."
@@ -55,10 +58,6 @@ fi
 
 # Install nix-darwin using Nix flakes from the DeterminateSystems/nix-darwin repository.
 echo "Building nix-darwin installer..."
-nix build github:determinate/nix-darwin#darwin-installer
-
-# Run the installer.
-echo "Running nix-darwin installer..."
-./result/bin/darwin-installer
+nix run nix-darwin/master#darwin-rebuild -- switch
 
 echo "nix-darwin installation complete."
