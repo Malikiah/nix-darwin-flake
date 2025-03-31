@@ -1,13 +1,14 @@
+#https://nix-darwin.github.io/nix-darwin/manual/index.html
 { config, pkgs, lib, inputs, ... }:
 {
   imports = [
     ./services/brew.nix
     ./services/displayplacer.nix
-    #./services/yabai.nix
-    #./services/skhd.nix
+    ./services/yabai.nix
+    ./services/skhd.nix
     #./services/monitorcontrol.nix
   ];
-  services.nix-daemon.enable = true;
+  #services.nix-daemon.enable = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -31,8 +32,74 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+  ids.gids.nixbld = 350;
+
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
   users.users.default.home = "/Users/default";
+
+  system.defaults = {
+    WindowManager.StandardHideDesktopIcons = true;
+    # Disabled for Yabai
+    WindowManager.EnableStandardClickToShowDesktop = false;
+
+    NSGlobalDomain."com.apple.swipescrolldirection" = false;
+
+
+    finder.AppleShowAllExtensions = true;
+    finder.FXPreferredViewStyle = "clmv";
+
+
+    screencapture.location = "~/Pictures/screenshots";
+
+    screensaver.askForPasswordDelay = 10;
+
+    alf= {
+      globalstate = 1;
+      loggingenabled = 1;
+      stealthenabled = 1;
+    };
+    
+    controlcenter = {
+      AirDrop = false;
+      BatteryShowPercentage = false;
+      Bluetooth = true;
+    };
+    
+    loginwindow = {
+#     LoginwindowText = "Apparition Systems";
+      GuestEnabled = false;
+    };
+
+    universalaccess = {
+      reduceTransparency = true;
+      reduceMotion = true;
+    };  
+
+    spaces = {
+        spans-displays = false;
+      };
+
+    dock.autohide = true;
+    dock.mru-spaces = false;
+    dock.persistent-apps = [
+      {
+        app = "/Applications/Zen.app";
+      }
+      {
+        app = "/Applications/Obsidian.app";
+      }
+      {
+        app = "/Applications/Tuta\ Mail.app";
+      }
+      {
+        app = "/Applications/Bitwarden.app";
+      }
+      {
+        app = "/Applications/Ableton\ Live\ 10\ Suite.app";
+      }
+    ];
+
+  };
 }

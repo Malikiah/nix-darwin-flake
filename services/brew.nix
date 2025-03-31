@@ -1,6 +1,11 @@
 {...}: {
   homebrew = {
     enable = true;
+    onActivation = {
+      cleanup = "uninstall";
+      upgrade = true;
+    };
+
     brewPrefix = "/opt/homebrew/bin";
     global = {
       brewfile = true;
@@ -17,49 +22,55 @@
       "git"
       "git-lfs"
       "borders"
-      "jakehilborn/jakehilborn/displayplacer"
       "qemu"
       "7zip"
-      "koekeishiya/formulae/yabai"
-      "koekeishiya/formulae/skhd"
+      "rustup"
+      "python"
+      # "koekeishiya/formulae/yabai"
+      #"koekeishiya/formulae/skhd"
      ];
 
     taps = [
-      "homebrew/bundle"
-      "homebrew/cask-fonts"
-      "homebrew/services"
-      "cloudflare/cloudflare"
       "earthly/earthly"
       "FelixKratz/formulae"
       ];
 
     casks = [
-     # "nikitabobko/tap/aerospace"
+      "dropbox"
+      "rustrover"
+      "ollama"
+      "anythingllm"
+      "anytype"
+#      "nikitabobko/tap/aerospace"
       "monero-wallet"
       "monitorcontrol"
       "alacritty"
+      "font-hack-nerd-font"
       "little-snitch"
       "micro-snitch"
       "launchbar"
-      "vmware-fusion"
       "affinity-designer"
       "affinity-photo"
-      "nextcloud"
       "onlyoffice"
       "tuta-mail"
       "bitwarden"
       "mullvadvpn"
       "mullvad-browser"
-      #"librewolf"
+      "zen-browser"
       "tor-browser"
       "obsidian"
+      "font-fontawesome"
+      "font-awesome-terminal-fonts"
       "burp-suite"
       "brave-browser"
       "native-access"
+      "filen"
+      "cryptomator"
       "splice"
       "ableton-live-suite@10"
       "ilok-license-manager"
       "android-file-transfer"
+      "signal"
       "steam"
       "wireshark"
       "whisky"
@@ -68,13 +79,13 @@
       "crossover"
       "blockblock"
       "knockknock"
-      "do-not-disturb"
       "taskexplorer"
       "reikey"
       "netiquette"
       "ransomwhere"
       "KextViewr"
       "whatsyoursign"
+      "notchnook"
     ];
   };
 }
