@@ -16,6 +16,29 @@ if [[ "$(uname)" != "Darwin" ]]; then
   exit 1
 fi
 
+echo "Setting ComputerName, HostName, and LocalHostname."
+sudo scutil --set ComputerName "macintosh"
+sudo scutil --set HostName "macintosh"
+sudo scutil --set LocalHostName "macintosh"
+
+echo "Installing HomeBrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+if [[ "$(uname -m)" == "arm64" ]]; then
+  echo "Running on Apple Silicon (arm64)."
+  if /usr/bin/pgrep oahd >/dev/null 2>&1; then
+    echo "Rosetta 2 not found. Installing..."
+    softwareupdate --install-rosetta --agree-to-license
+    if [ $? -eq 0]; then
+      echo "Rosetta 2 installation successful."
+    else
+      "Rosetta 2 installation failed."
+    fi
+  fi
+else
+  echo "This Mac is not running Apple Silicon. No need for Rosetta"
+fi
+
 # Check if Xcode Command Line Tools are installed (for Git).
 if ! xcode-select -p >/dev/null 2>&1; then
   echo "Xcode Command Line Tools not found. Installing..."
@@ -32,7 +55,9 @@ else
 fi
 
 echo "Cloning the nix-darwin-flake repository https://github.com/Malikiah/nix-darwin-flake.git."
-git clone https://github.com/Malikiah/nix-darwin-flake.git /etc/nix-darwin
+sudo git clone https://github.com/Malikiah/nix-darwin-flake.git /etc/nix-darwin
+
+sudo chown -R ${whoami}:staff /etc/nix-darwin
 
 # Check if Nix is installed.
 if ! command -v nix >/dev/null 2>&1; then
@@ -58,6 +83,10 @@ fi
 
 # Install nix-darwin using Nix flakes from the DeterminateSystems/nix-darwin repository.
 echo "Building nix-darwin installer..."
-nix run nix-darwin/master#darwin-rebuild -- switch
+/bin/zsh -c 'nix run nix-darwin/master#darwin-rebuild -- switch'
 
 echo "nix-darwin installation complete."
+yabai --start-service
+skhd --start-service
+
+echo "Reboot System"
