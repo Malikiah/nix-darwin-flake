@@ -1,3 +1,3 @@
 ```bash
-curl https://github.com/malikiah/nix-darwin-installer.sh | sh
+curl https://raw.githubusercontent.com/Malikiah/nix-darwin-flake/refs/heads/main/nix-darwin-installer.sh | sh
 ```
