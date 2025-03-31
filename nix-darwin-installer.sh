@@ -86,7 +86,5 @@ echo "Building nix-darwin installer..."
 /bin/zsh -c 'nix run nix-darwin/master#darwin-rebuild -- switch'
 
 echo "nix-darwin installation complete."
-yabai --start-service
-skhd --start-service
 
 echo "Reboot System"
