@@ -112,7 +112,7 @@ cmd - 0 : yabai -m space --focus 10;
 
 #WINDOW MOVEMENT##########################
 # TOGGLE FULLSCREEN on Active Window
-cmd + shift - f : yabai -m window --toggle zoom-fullscreen && yabai -m space --toggle padding;
+cmd + shift - f : yabai -m window --toggle zoom-fullscreen;
 
 alt + shift -f : yabai -m window --toggle native-fullscreen
 #
