@@ -1,6 +1,6 @@
 {...}:
 let
-  yabairc = builtins.readFile ../home/programs/dotfiles/config/yabai/yabairc;
+  yabairc = builtins.readFile ../home/programs/dotfiles/.config/yabai/yabairc;
 
 in 
 {

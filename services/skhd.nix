@@ -1,10 +1,10 @@
 {pkgs, ...}:
 let 
   terminal = "alt - return : open -na ${pkgs.alacritty}/Applications/Alacritty.app;";
-  browser = "alt - b : open -na /Applications/Orion.app;";
+  browser = "alt - b : open -na /Applications/Zen.app;";
   screenshot = "alt - s : skhd -k \"cmd + shift - 5\";";
 
-  skhdrc-movement = builtins.readFile ../home/programs/dotfiles/config/skhd/skhdrc;
+  skhdrc-movement = builtins.readFile ../home/programs/dotfiles/.config/skhd/skhdrc;
 
   skhdrc-applications = ''
     #Terminal

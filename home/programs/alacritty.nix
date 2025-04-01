@@ -4,7 +4,7 @@
     enable = true;
     executable = true;
     recursive = true;
-    source = dotfiles/config/alacritty/alacritty.toml;
+    source = dotfiles/.config/alacritty/alacritty.toml;
     target = ".config/alacritty/alacritty.toml";
   };
   

@@ -216,7 +216,7 @@ let
 in 
 {
   home.file."aerospace" = {
-      enable = true;
+      enable = false;
       executable = true;
       recursive = false;
       text = aerospace;

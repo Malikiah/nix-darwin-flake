@@ -2,7 +2,9 @@
 #
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
-#
+
+#yabai -m rule --add app=".*" fullscreen=on border=off
+#yabai -m signal --add event=window_focused action="~/.config/yabai/unfullscreen.sh"
 
 # global settings
 yabai -m config \

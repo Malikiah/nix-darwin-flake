@@ -4,3 +4,14 @@ System Settings -> Privacy & Security -> Full Disk Access
 ```bash
 curl https://raw.githubusercontent.com/Malikiah/nix-darwin-flake/refs/heads/main/nix-darwin-installer.sh | sh
 ```
+
+Disable SIP for Yabai
+https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection
+
+```bash
+csrutil enable --without fs --without debug --without nvram
+```
+
+```bash
+sudo nvram boot-args=-arm64e_preview_abi
+```

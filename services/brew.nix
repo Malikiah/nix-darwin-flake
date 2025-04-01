@@ -12,6 +12,7 @@
     };
 
     brews = [
+      "starship"
       "zsh"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
