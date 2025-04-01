@@ -157,4 +157,4 @@ cmd + shift - s : skhd -k "cmd + ctrl - 5";
 cmd + shift - t : open -na /Applications/Alacritty.app;
 
 #Browser
-cmd + shift - b : open -na /Applications/Arc.app;
+cmd + shift - b : open -na /Applications/Zen.app;
