@@ -27,7 +27,3 @@ map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugge
 -- rustaceanvim
 map("n", "<Leader>dt", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "Debugger testables" })
 
-
---rIn lua/custom/mappings.lua
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('n', '<leader>rr', ':split term://cargo run<CR>', opts)

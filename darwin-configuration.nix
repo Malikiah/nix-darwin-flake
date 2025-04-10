@@ -44,7 +44,11 @@
     # Disabled for Yabai
     WindowManager.EnableStandardClickToShowDesktop = false;
 
-    NSGlobalDomain."com.apple.swipescrolldirection" = false;
+    NSGlobalDomain = {
+      "com.apple.swipescrolldirection" = false;
+      "com.apple.sound.beep.feedback" = 0; # Disable Feedback noises
+      "com.apple.sound.beep.volume" = 0.0; # Turns Volume of beep to 0
+    };
 
 
     finder.AppleShowAllExtensions = true;
@@ -65,6 +69,7 @@
       AirDrop = false;
       BatteryShowPercentage = false;
       Bluetooth = true;
+      Sound = true;
     };
     
     loginwindow = {

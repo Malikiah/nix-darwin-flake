@@ -25,6 +25,7 @@
       "borders"
       "qemu"
       "7zip"
+      "rust"
       "rustup"
       "python"
       # "koekeishiya/formulae/yabai"
@@ -37,7 +38,11 @@
       ];
 
     casks = [
+
+      "nvidia-geforce-now"
       "dropbox"
+      "brave-browser"
+      "macfuse"
       "rustrover"
       "ollama"
       "anythingllm"
@@ -63,7 +68,6 @@
       "font-fontawesome"
       "font-awesome-terminal-fonts"
       "burp-suite"
-      "brave-browser"
       "native-access"
       "filen"
       "cryptomator"
@@ -86,7 +90,6 @@
       "ransomwhere"
       "KextViewr"
       "whatsyoursign"
-      "notchnook"
     ];
   };
 }

@@ -1,7 +1,7 @@
 {...}:
 {
   home.file."nvim" = {
-      enable = true;	
+      enable = false;	
       executable = true;
       recursive = true;
       source = dotfiles/.config/nvim;
