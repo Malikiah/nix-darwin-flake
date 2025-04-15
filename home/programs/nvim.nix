@@ -1,10 +1,10 @@
 {...}:
 {
   home.file."nvim" = {
-      enable = false;	
+      enable = true;	
       executable = true;
       recursive = true;
-      source = dotfiles/.config/nvim;
+      source = "~/dotfiles/.config/nvim";
       target = ".config/nvim";
     };
 }

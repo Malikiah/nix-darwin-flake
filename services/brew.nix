@@ -28,6 +28,8 @@
       "rust"
       "rustup"
       "python"
+      "mlx"
+      "huggingface-cli"
       # "koekeishiya/formulae/yabai"
       #"koekeishiya/formulae/skhd"
      ];
@@ -38,7 +40,6 @@
       ];
 
     casks = [
-
       "nvidia-geforce-now"
       "dropbox"
       "brave-browser"
