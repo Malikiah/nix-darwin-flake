@@ -12,6 +12,8 @@
     };
 
     brews = [
+      "python"
+      "pipx"
       "starship"
       "zsh"
       "zsh-autosuggestions"
