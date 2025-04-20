@@ -4,7 +4,7 @@
     enable = true;
     executable = true;
     recursive = true;
-    source = "dotfiles/.config/alacritty";
+    source = dotfiles/.config/alacritty;
     target = ".config/alacritty";
   };
   
