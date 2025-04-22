@@ -35,7 +35,7 @@ yabai -m config \
 # JankyBorders
 # /opt/homebrew/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0
 # 
-/opt/homebrew/bin/borders active_color=0xff007aff inactive_color=0xff494d64 width=6.0
+/opt/homebrew/bin/borders active_color=0xff007aff inactive_color=0xff494d64 width=6.0 &
 
 open -na /Applications/MonitorControl.app
 

@@ -4,7 +4,7 @@
       enable = true;	
       executable = true;
       recursive = true;
-      source = "/Users/default/dotfiles/.config/nvim";
+      source = dotfiles/.config/nvim;
       target = ".config/nvim";
     };
 }

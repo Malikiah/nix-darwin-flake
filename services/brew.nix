@@ -12,6 +12,7 @@
     };
 
     brews = [
+      "terraform"
       "python"
       "pipx"
       "starship"
