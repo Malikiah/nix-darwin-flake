@@ -33,6 +33,8 @@
       "python"
       "mlx"
       "huggingface-cli"
+      "python@3.12"
+      "cmake"
       # "koekeishiya/formulae/yabai"
       #"koekeishiya/formulae/skhd"
      ];
