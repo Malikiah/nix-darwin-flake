@@ -12,8 +12,8 @@
     };
 
     brews = [
-      "terraform"
-      "python"
+#      "hashicorp/tap/terraform"
+#      "python"
       "pipx"
       "starship"
       "zsh"
@@ -35,6 +35,12 @@
       "huggingface-cli"
       "python@3.12"
       "cmake"
+      "vultr"
+      "nmap"
+      "butane"
+      "helm"
+      "kubectl"
+      "go"
       # "koekeishiya/formulae/yabai"
       #"koekeishiya/formulae/skhd"
      ];
@@ -42,9 +48,12 @@
     taps = [
       "earthly/earthly"
       "FelixKratz/formulae"
+      "hashicorp/tap"
+      "puppetlabs/puppet"
       ];
 
     casks = [
+      "puppet-bolt"
       "nvidia-geforce-now"
       "dropbox"
       "brave-browser"
