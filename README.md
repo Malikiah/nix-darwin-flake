@@ -15,3 +15,8 @@ csrutil enable --without fs --without debug --without nvram
 ```bash
 sudo nvram boot-args=-arm64e_preview_abi
 ```
+
+# Apply Configuration
+```bash
+darwin-rebuild switch
+```
