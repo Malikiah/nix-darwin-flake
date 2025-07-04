@@ -6,6 +6,14 @@ let
   sonnetechMountDirectory = "${config.home.homeDirectory}/Documents/Encrypted\ Volumes/Sonnetech";
 in
 {
+  home.file."cryptmator" = {
+    enable = true;
+    executable = true;
+    recursive = true;
+    source = dotfiles/Library/Application Support/Cryptomator;
+    target = "Library/Application Support/Cryptomator";
+  };
+
 
   launchd.agents.mountCryptomator = {
     enable = true;
@@ -19,8 +27,10 @@ in
         if [ ! -d "${sonnetechMountDirectory}" ]; then
           mkdir -p "${sonnetechMountDirectory}"
         fi
-        
-        /usr/sbin/diskutil mount readWrite \
+
+        ${pkgs.bash}/usr/sbin/diskutil unmount ${sonnetechUUID}
+
+        ${pkgs.bash}/usr/sbin/diskutil mount \
           -mountPoint '${sonnetechMountDirectory}' \
           ${sonnetechUUID}
             
