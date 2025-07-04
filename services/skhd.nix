@@ -4,7 +4,7 @@ let
   browser = "alt - b : open -na /Applications/Zen.app;";
   screenshot = "alt - s : skhd -k \"cmd + shift - 5\";";
 
-  skhdrc-movement = builtins.readFile ../home-manager/programs/dotfiles/.config/skhd/skhdrc;
+  skhdrc-movement = builtins.readFile ../home-manager/home/.config/skhd/skhdrc;
 
   skhdrc-applications = ''
     #Terminal

@@ -38,7 +38,7 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
-  users.users.default.home-manager = "/Users/default";
+  users.users.default.home = "/Users/default";
 
   system.defaults = {
     WindowManager.StandardHideDesktopIcons = true;
