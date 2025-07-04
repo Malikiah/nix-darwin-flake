@@ -76,7 +76,7 @@
       "onlyoffice"
       "tuta-mail"
       "bitwarden"
-      "mullvadvpn"
+      "mullvad-vpn"
       "mullvad-browser"
       "zen"
       "tor-browser"

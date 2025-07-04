@@ -13,7 +13,7 @@ let
 in 
 {
   home.file."monitorcontrol" = {
-      enable = true;
+      enable = false;
       executable = true;
       recursive = true;
       source = ../home/Library/Preferences/app.monitorcontrol.MonitorControl.plist;
@@ -21,7 +21,7 @@ in
     };
 
   launchd.agents.monitorControl = {
-    enable = true;
+    enable = false;
     config = {
       ProgramArguments = [ script.outPath ];
       RunAtLoad = true;
