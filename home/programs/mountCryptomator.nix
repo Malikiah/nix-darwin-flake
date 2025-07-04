@@ -3,7 +3,7 @@
 let
   # Use diskutil apfs list to get the UUID
   sonnetechUUID  = "CE901405-63A0-4187-B5FC-CF0DFA4D6CD5";
-  sonnetechMountDirectory = "${config.home.homeDirectory}/Documents/Cryptomator/Sonnetech";
+  sonnetechMountDirectory = "${config.home.homeDirectory}/Documents/Encrypted\ Volumes/Sonnetech";
 in
 {
 
@@ -16,7 +16,6 @@ in
         ''
         set -euo pipefail
 
-        # 1.  Ensure the directory exists and is owned by you
         if [ ! -d "${sonnetechMountDirectory}" ]; then
           mkdir -p "${sonnetechMountDirectory}"
         fi
