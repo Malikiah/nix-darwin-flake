@@ -9,7 +9,7 @@
     ./programs/skhd.nix
     ./programs/zsh.nix
     ./programs/nvim.nix
-    ./programs/mountCryptomator.nix
+    ./programs/mountSonnetech.nix
     ./programs/jankyBorders.nix
     ./programs/monitorControl.nix
   ];
