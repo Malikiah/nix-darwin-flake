@@ -54,7 +54,7 @@
       ];
 
     casks = [
-      "puppet-bolt"
+      "tresorit"
       "nvidia-geforce-now"
       "dropbox"
       "brave-browser"

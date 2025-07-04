@@ -1,5 +1,7 @@
-Before running the installation you must allow Full Disk access to the terminal you will be installing with
-System Settings -> Privacy & Security -> Full Disk Access
+# Pre Configuration
+Before running the installation you must allow Full Disk access to the terminal you will be installing with\n
+
+`System Settings -> Privacy & Security -> Full Disk Access`
 
 ```bash
 curl https://raw.githubusercontent.com/Malikiah/nix-darwin-flake/refs/heads/main/nix-darwin-installer.sh | sh
@@ -16,7 +18,7 @@ csrutil enable --without fs --without debug --without nvram
 sudo nvram boot-args=-arm64e_preview_abi
 ```
 
-# Apply Configuration
+# Apply Nix Flake
 ```bash
 darwin-rebuild switch
 ```
