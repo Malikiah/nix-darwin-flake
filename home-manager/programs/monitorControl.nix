@@ -16,7 +16,7 @@ in
       enable = true;
       executable = true;
       recursive = true;
-      source = ../Library/Preferences/app.monitorcontrol.MonitorControl.plist;
+      source = ../home/Library/Preferences/app.monitorcontrol.MonitorControl.plist;
       target = "./Library/Preferences/app.monitorcontrol.MonitorControl.plist";
     };
 
