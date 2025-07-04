@@ -7,5 +7,4 @@
       source = ../home/.config/skhd/skhdrc;
       target = ".config/skhd/skhdrc";
     };
-  }
-
+}

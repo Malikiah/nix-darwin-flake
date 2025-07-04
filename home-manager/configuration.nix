@@ -11,6 +11,7 @@
     ./programs/nvim.nix
     ./programs/mountCryptomator.nix
     ./programs/jankyBorders.nix
+    ./programs/monitorControl.nix
   ];
   home.username = "default";
   home.stateVersion = "24.11";
