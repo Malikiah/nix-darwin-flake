@@ -6,6 +6,7 @@
     ./programs/aerospace.nix
     ./programs/alacritty.nix
     ./programs/yabai.nix
+    ./programs/skhd.nix
     ./programs/zsh.nix
     ./programs/nvim.nix
     ./programs/mountCryptomator.nix

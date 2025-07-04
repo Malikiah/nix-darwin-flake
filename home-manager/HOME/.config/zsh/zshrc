@@ -1,0 +1,8 @@
+alias ls='ls -lah --color=auto -F'
+alias grep='grep --color'
+alias ssh-kali='ssh default@192.168.64.7'
+alias vim=/opt/homebrew/bin/nvim
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:/opt/puppetlabs/bin
+
+eval "$(starship init zsh)"
