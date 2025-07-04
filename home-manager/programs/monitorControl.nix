@@ -2,7 +2,7 @@
 let
   script = pkgs.writeShellScript "monitorcontrol-wrapper" ''
     while true; do
-      open -a "${pkgs.monitorcontrol}/Applications/MonitorControl.app"
+      open -a "/Applications/MonitorControl.app"
       while pgrep -f "MonitorControl.app" > /dev/null; do
         sleep 5
       done
@@ -12,8 +12,16 @@ let
   '';
 in 
 {
+  home.file."monitorcontrol" = {
+      enable = true;
+      executable = true;
+      recursive = true;
+      source = ../Library/Preferences/app.monitorcontrol.MonitorControl.plist;
+      target = "./Library/Preferences/app.monitorcontrol.MonitorControl.plist";
+    };
+
   launchd.agents.monitorControl = {
-    enable = false;
+    enable = true;
     config = {
       ProgramArguments = [ script.outPath ];
       RunAtLoad = true;
