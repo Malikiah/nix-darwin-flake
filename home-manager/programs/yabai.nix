@@ -4,7 +4,7 @@
       enable = true;
       executable = true;
       recursive = true;
-      source = dotfiles/.config/yabai/yabairc;
+      source = ../home/.config/yabai/yabairc;
       target = ".config/yabai/yabairc";
     };
 
@@ -13,7 +13,7 @@
       enable = true;
       executable = true;
       recursive = true;
-      source = dotfiles/.config/skhd/skhdrc;
+      source = ../home/.config/skhd/skhdrc;
       target = ".config/skhd/skhdrc";
     };
   }

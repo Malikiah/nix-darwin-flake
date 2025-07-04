@@ -22,7 +22,7 @@
       home-manager.darwinModules.home-manager{
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.default = import home/configuration.nix;
+          home-manager.users.default = import home-manager/configuration.nix;
         }
       ];
     };

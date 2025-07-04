@@ -3,8 +3,8 @@ let
   zsh-autosuggestions = "source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh";
   zsh-syntax-highlighting = "source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
   
-  zshrc = builtins.readFile dotfiles/.config/zsh/zshrc;
-  zshenv = builtins.readFile dotfiles/.config/zsh/zshenv;
+  zshrc = builtins.readFile ../home/.config/zsh/zshrc;
+  zshenv = builtins.readFile ../home/.config/zsh/zshenv;
 
   zshrc_full = zshrc + "\n" + zsh-autosuggestions + "\n" + zsh-syntax-highlighting;
 
@@ -14,7 +14,7 @@ in
     enable = false;
     executable = true;
     recursive = false;
-    source = dotfiles/.config/zsh/p10k.zsh;
+    source = ../home/.config/zsh/p10k.zsh;
     target = ".config/zsh/p10k.zsh";
     };
 
@@ -22,7 +22,7 @@ in
     enable = true;
     executable = true;
     recursive = false;
-    source = dotfiles/.config/starship.toml;
+    source = ../home/.config/starship.toml;
     target = ".config/starship.toml";
     };
 

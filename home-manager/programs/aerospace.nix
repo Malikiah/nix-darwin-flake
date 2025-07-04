@@ -22,7 +22,6 @@ let
     # 'after-startup-command' is run after 'after-login-command'
     # Available commands : https://nikitabobko.github.io/AeroSpace/commands
     after-startup-command = [
-        'exec-and-forget ${pkgs.jankyborders}/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
     ]
     
     # Start AeroSpace at login

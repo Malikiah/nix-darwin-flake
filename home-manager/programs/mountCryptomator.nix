@@ -10,7 +10,7 @@ in
     enable = true;
     executable = true;
     recursive = true;
-    source = dotfiles/Library/Application Support/Cryptomator;
+    source = ../home/Library/Application Support/Cryptomator;
     target = "Library/Application Support/Cryptomator";
   };
 
