@@ -1,19 +1,31 @@
 { config, pkgs, lib, ... }:
 
 let
-  sonnetechUUID  = "0E239BC6-F960-3107-89CF-1C97F78BB46B";
+  # Use diskutil apfs list to get the UUID
+  sonnetechUUID  = "CE901405-63A0-4187-B5FC-CF0DFA4D6CD5";
   sonnetechMountDirectory = "${config.home.homeDirectory}/Documents/Cryptomator/Sonnetech";
 in
 {
-  # Same directory-creation trick, but in the *home* activation script
 
   launchd.agents.mountCryptomator = {
     enable = true;
     config = {
       ProgramArguments = [
-        "/bin/bash"
+        "${pkgs.bash}/bin/bash"
         "-c"
-        "'/Users/default/test_script'"
+        ''
+        set -euo pipefail
+
+        # 1.  Ensure the directory exists and is owned by you
+        if [ ! -d "${sonnetechMountDirectory}" ]; then
+          mkdir -p "${sonnetechMountDirectory}"
+        fi
+        
+        /usr/sbin/diskutil mount readWrite \
+          -mountPoint '${sonnetechMountDirectory}' \
+          ${sonnetechUUID}
+            
+        ''
       ];
       WatchPaths = [ "/Volumes" ];
       RunAtLoad = true;
