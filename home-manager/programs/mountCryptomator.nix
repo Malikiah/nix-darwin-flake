@@ -58,7 +58,7 @@ let
     "lastSuccessfulUpdateCheck" : "2025-07-04T04:42:09Z",
     "useQuickAccess" : true
   }
-  ''
+  '';
 in
 {
   home.file."cryptmator" = {
@@ -67,7 +67,7 @@ in
     recursive = true;
     text = cryptomatorSettings;
     #source = ../home/Library/Application Support/Cryptomator;
-    target = "Library/Application Support/Cryptomator";
+    target = "Library/Application Support/Cryptomator/settings.json";
   };
 
 
