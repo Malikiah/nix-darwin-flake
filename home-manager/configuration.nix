@@ -15,6 +15,7 @@
   home.username = "default";
   home.stateVersion = "24.11";
   home.packages = [
+    pkgs.cryptomator-cli
     #pkgs.zsh-autosuggestions
     #pkgs.zsh-syntax-highlighting
     #pkgs.jankyborders

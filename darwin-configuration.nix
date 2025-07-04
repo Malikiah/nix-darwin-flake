@@ -2,8 +2,7 @@
 { config, pkgs, lib, inputs, ... }:
 {
   imports = [
-    ./services/brew.nix
-    ./services/displayplacer.nix
+    ./package-management/brew.nix
     ./services/yabai.nix
     ./services/skhd.nix
     #./services/monitorcontrol.nix

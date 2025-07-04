@@ -7,35 +7,27 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
-  let
-    system = "aarch64-darwin";
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [ self.overlays.default ];
-    };
-  in {
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ...}:
+  {
+    # Build darwin flake using:
+    # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."macintosh" = nix-darwin.lib.darwinSystem {
-      inherit system pkgs;
-
-      modules = [
-        ./darwin-configuration.nix
-
-        home-manager.darwinModules.home-manager {
+      system = "aarch64-darwin"; 
+      modules = [ 
+      ./darwin-configuration.nix
+ #     ./security.nix
+      home-manager.darwinModules.home-manager{
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.default = import ./home-manager/configuration.nix;
+          home-manager.users.default = import home-manager/configuration.nix;
         }
       ];
     };
 
+    # Expose the package set, including overlays, for convenience.
     darwinPackages = self.darwinConfigurations."macintosh".pkgs;
-
-    overlays.default = final: prev: {
-      cryptomator-cli = prev.callPackage ./packages/cryptomator-cli.nix {};
-    };
   };
 }
-
