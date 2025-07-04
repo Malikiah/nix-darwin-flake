@@ -11,8 +11,8 @@
       ];
       RunAtLoad = true;
       KeepAlive = true;
-      StandardOutPath = "/tmp/jankyborders.out.log";
-      StandardErrorPath = "/tmp/jankyborders.err.log";
+      StandardOutPath = "/tmp/jankyBorders.out.log";
+      StandardErrorPath = "/tmp/jankyBorders.err.log";
     };
   };
 }

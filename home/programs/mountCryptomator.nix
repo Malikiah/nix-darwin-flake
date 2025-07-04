@@ -15,13 +15,11 @@ in
         "-c"
         "'/Users/default/test_script'"
       ];
-
-    };
-    serviceConfig = {
       WatchPaths = [ "/Volumes" ];
-      RunAtLoad  = true;
+      RunAtLoad = true;
+      KeepAlive = true;
       StandardOutPath  = "/tmp/mountCryptomator.out.log";
-      StandardErrorPath= "/tmp/mountCryptomator.err.log";
+      StandardErrorPath = "/tmp/mountCryptomator.err.log";
     };
   };
 }
