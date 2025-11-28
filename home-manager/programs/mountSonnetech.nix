@@ -4,7 +4,7 @@ let
   # Use diskutil apfs list to get the UUID
   sonnetechUUID  = "CE901405-63A0-4187-B5FC-CF0DFA4D6CD5";
   sonnetechMountPoint = "${config.home.homeDirectory}/Documents/Tresorit/Encrypted Volumes/Sonnetech";
-  script = pkgs.writeShellScript "mountCryptomator" ''
+  script = pkgs.writeShellScript "mountSonnetech" ''
     while true; do
         if [ ! -d "${sonnetechMountPoint}" ]; then
           mkdir -p "${sonnetechMountPoint}"
@@ -29,7 +29,7 @@ let
 in
 {
   launchd.agents.mountSonnetech = {
-    enable = true;
+    enable = false;
     config = {
       ProgramArguments = [ script.outPath ];
       #WatchPaths = [ "/Volumes" ];

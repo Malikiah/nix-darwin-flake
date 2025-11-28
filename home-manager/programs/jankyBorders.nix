@@ -8,6 +8,7 @@
         "active_color=0xff007aff"
         "inactive_color=0xff494d64"
         "width=8.0"
+        "blacklist='Loom,Loom Helper,loom-recorder-production'"
       ];
       RunAtLoad = true;
       KeepAlive = true;

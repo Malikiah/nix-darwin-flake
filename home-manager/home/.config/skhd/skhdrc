@@ -76,26 +76,32 @@
 # A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
 # ############################################################### #
 
-# Restart Yabai
+# Restart Yaba
 cmd + ctrl - r : yabai --restart-service;
 
 # Restart SHKD
 cmd + ctrl - s : skhd --restart-service;
 
-#FOCUS####################################
-# FOCUS DISPLAY to the Left and Right
-cmd - y : yabai -m display --focus west;
-cmd - o : yabai -m display --focus east;
 
-# FOCUS WINDOW on Current Display Next and Previous
+#Toggle Window Float
+cmd + alt - f : yabai -m window --toggle float;
+
+#FOCUS####################################
+# FOCUS DISPLAY to the NESW
+cmd - u : yabai -m display --focus north;
+cmd - o : yabai -m display --focus east;
+cmd - i : yabai -m display --focus south;
+cmd - y : yabai -m display --focus west;
+
+# FOCUS WINDOW on Current Display NESW
 cmd - k : yabai -m window --focus north;
 cmd - l : yabai -m window --focus east;
 cmd - j : yabai -m window --focus south;
 cmd - h : yabai -m window --focus west;
 
- # FOCUS SPACE on Active Display Forwards and Backwards
-cmd - u : yabai -m space --focus prev;
-cmd - i : yabai -m space --focus next;
+# FOCUS SPACE on Active Display Forwards and Backwards
+cmd - w : yabai -m space --focus prev;
+cmd - e : yabai -m space --focus next;
 
  # FOCUS SPACE 1-10 and fowards and backwards
 cmd - 1 : yabai -m space --focus 1;
@@ -114,7 +120,7 @@ cmd - 0 : yabai -m space --focus 10;
 # TOGGLE FULLSCREEN on Active Window
 cmd + shift - f : yabai -m window --toggle zoom-fullscreen;
 
-alt + shift -f : yabai -m window --toggle native-fullscreen
+alt + shift - f : yabai -m window --toggle native-fullscreen
 #
 # CLOSE Active Window
 cmd - q : yabai -m window --close;
@@ -125,12 +131,15 @@ cmd + shift - l : yabai -m window --swap east;
 cmd + shift - j : yabai -m window --swap south;
 cmd + shift - h : yabai -m window --swap west;
 
-cmd + shift - u : yabai -m window --space prev;
-cmd + shift - i : yabai -m window --space next;
+# MOVE WINDOW to next or previous space
+cmd + alt - u : yabai -m window --space prev;
+cmd + alt - i : yabai -m window --space next;
 
 # MOVE WINDOW to the Left or Right Display
-cmd + shift - o : yabai -m window --display east; yabai -m display --focus east;
-cmd + shift - y : yabai -m window --display west; yabai -m display --focus west;
+cmd + shift - u : yabai -m window --display north; yabai -m display --focus north
+cmd + shift - o : yabai -m window --display east; yabai -m display --focus east
+cmd + shift - i : yabai -m window --display south; yabai -m display --focus south
+cmd + shift - y : yabai -m window --display west; yabai -m display --focus west
 
 # MOVE WINDOW to a Specified Space 1-10
 cmd + shift - 1 : yabai -m window --space 1;
