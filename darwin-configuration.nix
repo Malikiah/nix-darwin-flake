@@ -8,7 +8,7 @@
     #./services/monitorcontrol.nix
   ];
   #services.nix-daemon.enable = true;
-
+  nix.enable = false;
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ 

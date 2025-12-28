@@ -12,10 +12,7 @@
     };
 
     brews = [
-#      "hashicorp/tap/terraform"
-#      "python"
       "pipx"
-      "starship"
       "zsh"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
@@ -31,11 +28,10 @@
       "rust"
       "rustup"
       "python"
+      "python@3.12"
       "mlx"
       "huggingface-cli"
-      "python@3.12"
       "cmake"
-      "vultr"
       "nmap"
       "butane"
       "helm"
@@ -104,7 +100,7 @@
       "utm"
       "crossover"
       "blockblock"
-      "knockknock"
+      #"knockknock"
       "taskexplorer"
       "reikey"
       "netiquette"

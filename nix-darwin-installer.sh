@@ -16,6 +16,10 @@ if [[ "$(uname)" != "Darwin" ]]; then
 	exit 1
 fi
 
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+mkdir -p ~/.config/nix/
+echo "experimental-features = nix-command flakes" > ~/.config/nix/nix.conf
+
 echo "Setting ComputerName, HostName, and LocalHostname."
 sudo scutil --set ComputerName "macintosh"
 sudo scutil --set HostName "macintosh"
@@ -57,7 +61,8 @@ fi
 echo "Cloning the nix-darwin-flake repository https://github.com/Malikiah/nix-darwin-flake.git."
 sudo git clone https://github.com/Malikiah/nix-darwin-flake.git /etc/nix-darwin
 
-sudo chown -R ${whoami}:staff /etc/nix-darwin
+
+sudo chown -R $(whoami):staff /etc/nix-darwin
 
 # Check if Nix is installed.
 if ! command -v nix >/dev/null 2>&1; then
@@ -83,8 +88,8 @@ fi
 
 # Install nix-darwin using Nix flakes from the DeterminateSystems/nix-darwin repository.
 echo "Building nix-darwin installer..."
-/bin/zsh -c 'nix run nix-darwin/master#darwin-rebuild -- switch'
+sudo /bin/zsh -c 'nix run nix-darwin/master#darwin-rebuild -- switch'
 
 echo "nix-darwin installation complete."
 
-echo "Reboot System"
+echo "\n!Reboot YOUR System!\n"
