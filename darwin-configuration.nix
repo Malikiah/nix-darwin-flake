@@ -12,7 +12,7 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ 
-    pkgs.terraform
+#    pkgs.terraform
     ];
 
   # Auto upgrade nix package and the daemon service.
@@ -73,7 +73,6 @@
     };
     
     loginwindow = {
-#     LoginwindowText = "Apparition Systems";
       GuestEnabled = false;
     };
 
@@ -84,7 +83,7 @@
 
     spaces = {
         spans-displays = false;
-      };
+    };
 
     dock.autohide = true;
     dock.mru-spaces = false;
@@ -93,18 +92,13 @@
         app = "/Applications/Zen.app";
       }
       {
-        app = "/Applications/Obsidian.app";
+        app = "/Applications/Heptabase.app";
       }
       {
-        app = "/Applications/Tuta\ Mail.app";
-      }
-      {
-        app = "/Applications/Bitwarden.app";
-      }
-      {
-        app = "/Applications/Ableton\ Live\ 10\ Suite.app";
+        app = "/Applications/1Password.app";
       }
     ];
+
 
   };
 }
