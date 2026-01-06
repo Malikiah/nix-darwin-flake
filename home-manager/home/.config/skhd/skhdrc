@@ -99,11 +99,11 @@ cmd - l : yabai -m window --focus east;
 cmd - j : yabai -m window --focus south;
 cmd - h : yabai -m window --focus west;
 
-# FOCUS SPACE on Active Display Forwards and Backwards
+# FOCUS SPACE on Main Display Forwards and Backwards
 cmd - w : yabai -m space --focus prev;
 cmd - e : yabai -m space --focus next;
 
- # FOCUS SPACE 1-10 and fowards and backwards
+ # FOCUS SPACE on Main Display 1-10
 cmd - 1 : yabai -m space --focus 1;
 cmd - 2 : yabai -m space --focus 2;
 cmd - 3 : yabai -m space --focus 3;

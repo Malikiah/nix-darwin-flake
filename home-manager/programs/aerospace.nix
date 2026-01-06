@@ -114,7 +114,7 @@ let
 
     cmd-alt-r = 'reload-config'
 
-    cmd-shift-f = 'fullscreen'
+    cmd-f = 'fullscreen'
     cmd-alt-f = 'macos-native-fullscreen'
     cmd-alt-h = 'macos-native-minimize'
 
@@ -139,21 +139,23 @@ let
 
     cmd-y = 'focus-monitor left'
     cmd-o = 'focus-monitor right'
+    cmd-u = 'focus-monitor up'
+    cmd-i = 'focus-monitor down'
 
-    cmd-u = 'workspace prev'
-    cmd-i = 'workspace next'
+    cmd-s = 'workspace prev'
+    cmd-d = 'workspace next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    cmd-1 = 'workspace 1'
-    cmd-2 = 'workspace 2'
-    cmd-3 = 'workspace 3'
-    cmd-4 = 'workspace 4'
-    cmd-5 = 'workspace 5'
-    cmd-6 = 'workspace 6'
-    cmd-7 = 'workspace 7'
-    cmd-8 = 'workspace 8'
-    cmd-9 = 'workspace 9'
-    cmd-0 = 'workspace 0'
+    cmd-1 = 'workspace 0'
+    cmd-2 = 'workspace 1'
+    cmd-3 = 'workspace 2'
+    cmd-4 = 'workspace 3'
+    cmd-5 = 'workspace 4'
+    cmd-6 = 'workspace 5'
+    cmd-7 = 'workspace 6'
+    cmd-8 = 'workspace 7'
+    cmd-9 = 'workspace 8'
+    cmd-0 = 'workspace 9'
     
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     cmd-shift-h = 'move left'
@@ -163,9 +165,11 @@ let
 
     cmd-shift-y = 'move-node-to-monitor left'
     cmd-shift-o = 'move-node-to-monitor right'
+    cmd-shift-u = 'move-node-to-monitor up'
+    cmd-shift-i = 'move-node-to-monitor down'
 
-    cmd-shift-u = 'move-node-to-workspace prev'
-    cmd-shift-i = 'move-node-to-workspace next'
+    cmd-shift-s = 'move-node-to-workspace prev'
+    cmd-shift-d = 'move-node-to-workspace next'
     
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
     cmd-shift-minus = 'resize smart -50'
@@ -215,10 +219,10 @@ let
 in 
 {
   home.file."aerospace" = {
-      enable = false;
+      enable = true;
       executable = true;
       recursive = false;
-      text = aerospace;
+      source = ../home/.config/aerospace/aerospace.toml;
       target = ".config/aerospace/aerospace.toml";
     };
 

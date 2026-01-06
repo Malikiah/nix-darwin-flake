@@ -14,7 +14,7 @@
     ./programs/monitorControl.nix
   ];
   home.username = "default";
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
   home.packages = [
     #pkgs.zsh-autosuggestions
     #pkgs.zsh-syntax-highlighting
