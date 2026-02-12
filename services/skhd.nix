@@ -1,7 +1,7 @@
 {pkgs, ...}:
 {
     services.skhd = {
-      enable = true;
+      enable = false;
     };
 
     launchd.user.agents."org.nixos.skhd".serviceConfig = {

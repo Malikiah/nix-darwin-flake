@@ -41,6 +41,7 @@
       "npm"
       # "koekeishiya/formulae/yabai"
       #"koekeishiya/formulae/skhd"
+      "starship"
      ];
 
     taps = [
@@ -51,6 +52,12 @@
       ];
 
     casks = [
+      "nikitabobko/tap/aerospace"
+     # "hammerspoon"
+      "claude"
+      "claude-code"
+      "fastmail"
+      "tuta-mail"
       "motion"
       "heptabase"
       "openmtp"
@@ -106,6 +113,7 @@
       "netiquette"
       "ransomwhere"
       "KextViewr"
+      "lens"
     ];
   };
 }

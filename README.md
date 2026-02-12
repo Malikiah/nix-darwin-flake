@@ -14,8 +14,14 @@ https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection
 csrutil enable --without fs --without debug --without nvram
 ```
 
+Then run the following and reboot
 ```bash
 sudo nvram boot-args=-arm64e_preview_abi
+```
+
+lastly run, this is necessary to get Yabai to work properly. We are adding the yabai scripting aditions. 
+```bash
+sudo yabai --load-sa
 ```
 
 # Apply Nix Flake
