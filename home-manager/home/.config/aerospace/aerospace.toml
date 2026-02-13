@@ -45,11 +45,11 @@ key-mapping.preset = 'qwerty'
 3 = ['main']                 # Non-main monitor in case when there are only two monitors
 4 = ['main']                  # Case insensitive regex substring
 5 = ['main']  # Case insensitive regex match
-6 = [2]
-7 = [2] # You can specify multiple patterns. The first matching pattern will be used
-8 = [2]
-9 = [2]
-0 = [2]
+6 = [2, 'main']
+7 = [2, 'main'] # You can specify multiple patterns. The first matching pattern will be used
+8 = [2, 'main']
+9 = [2, 'main']
+0 = [2, 'main']
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -206,4 +206,46 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+# to get application id for window to workspace config
+# osascript -e 'id of app "calendar"'
+# com.apple.iCal  
 
+#Safari
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace 1'
+
+#Zen Browser
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace 1'
+
+#Apple Calendar
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace 4'
+
+#TutaNota
+[[on-window-detected]]
+if.app-id = 'de.tutao.tutanota'
+run = 'move-node-to-workspace 5'
+
+# Fastmail
+[[on-window-detected]]
+if.app-id = 'com.fastmail.mac.Fastmail'
+run = 'move-node-to-workspace 5'
+
+# Motion Calendar
+[[on-window-detected]]
+if.app-id = 'com.electron.motion'
+run = 'move-node-to-workspace 6'
+
+# Claude Desktop
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = 'move-node-to-workspace 9'
+
+#Heptabase
+[[on-window-detected]]
+if.app-id = 'app.projectmeta.projectmeta'
+run = 'move-node-to-workspace 0'

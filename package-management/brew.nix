@@ -95,6 +95,7 @@
       "burp-suite"
       "native-access"
       "cryptomator"
+      "fuse-t"
       "splice"
       "ableton-live-suite@10"
       "ilok-license-manager"
