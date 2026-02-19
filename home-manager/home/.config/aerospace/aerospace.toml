@@ -269,5 +269,5 @@ run = 'move-node-to-workspace 0'
 #Notion
 [[on-window-detected]]
 if.app-id = 'notion.id'
-run = 'move-node-to-workspace 0’
+run = 'move-node-to-workspace 0'
 
