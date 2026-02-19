@@ -208,7 +208,7 @@ alt-shift-l = ['join-with right', 'mode main']
 
 # to get application id for window to workspace config
 # osascript -e 'id of app "calendar"'
-# com.apple.iCal  
+# com.apple.iCal
 
 #Safari
 [[on-window-detected]]
@@ -220,10 +220,16 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 1'
 
-#Apple Calendar
+#Slack
 [[on-window-detected]]
-if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace 4'
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 3'
+
+
+#Apple Mail
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 5'
 
 #TutaNota
 [[on-window-detected]]
@@ -235,6 +241,11 @@ run = 'move-node-to-workspace 5'
 if.app-id = 'com.fastmail.mac.Fastmail'
 run = 'move-node-to-workspace 5'
 
+#Apple Calendar
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace 6'
+
 # Motion Calendar
 [[on-window-detected]]
 if.app-id = 'com.electron.motion'
@@ -245,7 +256,18 @@ run = 'move-node-to-workspace 6'
 if.app-id = 'com.anthropic.claudefordesktop'
 run = 'move-node-to-workspace 9'
 
+# ChatGPT Desktop
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = 'move-node-to-workspace 9'
+
 #Heptabase
 [[on-window-detected]]
 if.app-id = 'app.projectmeta.projectmeta'
 run = 'move-node-to-workspace 0'
+
+#Notion
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = 'move-node-to-workspace 0’
+

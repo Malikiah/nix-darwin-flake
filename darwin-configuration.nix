@@ -68,8 +68,8 @@
     controlcenter = {
       AirDrop = false;
       BatteryShowPercentage = false;
-      Bluetooth = true;
-      Sound = true;
+      Bluetooth = false;
+      Sound = false;
     };
     
     loginwindow = {
