@@ -39,9 +39,10 @@
       "go"
       "pv"
       "npm"
-      # "koekeishiya/formulae/yabai"
+      #"koekeishiya/formulae/yabai"
       #"koekeishiya/formulae/skhd"
       "starship"
+      "hashicorp/tap/terraform"
      ];
 
     taps = [
@@ -49,13 +50,15 @@
       "FelixKratz/formulae"
       "hashicorp/tap"
       "puppetlabs/puppet"
+      "hashicorp/tap"
       ];
 
     casks = [
       "nikitabobko/tap/aerospace"
-     # "hammerspoon"
+      "obs"
+      #"hammerspoon"
+      "macwhisper"
       "claude"
-      "claude-code"
       "fastmail"
       "tuta-mail"
       "motion"
