@@ -13,7 +13,14 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ...}:
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#simple
+    # $ darwin-rebuild switch --flake .#macintosh
+    #
+    # "macintosh" is just the configuration name. To rename it, change the
+    # attribute name below (e.g. darwinConfigurations."mymac") and use the new
+    # name everywhere it appears: the darwinPackages line at the bottom, the
+    # --flake .#<name> argument, and the scutil host names in
+    # nix-darwin-installer.sh. If your machine's hostname matches the name you
+    # can also just run `darwin-rebuild switch` with no --flake argument.
     darwinConfigurations."macintosh" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin"; 
       modules = [ 

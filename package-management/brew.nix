@@ -12,6 +12,8 @@
     };
 
     brews = [
+      "ffmpeg"
+      "yt-dlp"
       "pipx"
       "zsh"
       "zsh-autosuggestions"
@@ -43,6 +45,7 @@
       #"koekeishiya/formulae/skhd"
       "starship"
       "hashicorp/tap/terraform"
+      "uv"
      ];
 
     taps = [
@@ -56,6 +59,9 @@
     casks = [
       "nikitabobko/tap/aerospace"
       "obs"
+      "elgato-camera-hub"
+      "vlc"
+      "spotify"
       #"hammerspoon"
       "macwhisper"
       "claude"
