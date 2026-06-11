@@ -207,12 +207,16 @@ preflight() {
 # ----------------------------------------------------------------------------
 rebuild() {
 	load_nix_env
+	# --impure lets the flake read $SUDO_USER/$USER so the config applies to the
+	# current user instead of a hardcoded name. sudo preserves SUDO_USER, which
+	# the flake prefers over $USER (= root under sudo).
+	local target_user="${SUDO_USER:-$USER}"
 	if command -v darwin-rebuild >/dev/null 2>&1; then
-		log "Running darwin-rebuild switch..."
-		sudo darwin-rebuild switch --flake "$NIX_DARWIN_DIR"
+		log "Running darwin-rebuild switch for user '$target_user'..."
+		sudo darwin-rebuild switch --impure --flake "$NIX_DARWIN_DIR"
 	else
 		log "darwin-rebuild not found yet; bootstrapping via 'nix run nix-darwin'..."
-		sudo /bin/zsh -lc "nix run nix-darwin/master#darwin-rebuild -- switch --flake '$NIX_DARWIN_DIR'"
+		sudo /bin/zsh -lc "nix run nix-darwin/master#darwin-rebuild -- switch --impure --flake '$NIX_DARWIN_DIR'"
 	fi
 }
 

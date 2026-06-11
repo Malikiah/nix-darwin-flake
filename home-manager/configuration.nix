@@ -1,4 +1,4 @@
-{config, pkgs, darwinPackages, ...}:
+{config, pkgs, darwinPackages, username, ...}:
 {
   programs.home-manager.enable = true;
 
@@ -13,7 +13,7 @@
     ./programs/jankyBorders.nix
     ./programs/monitorControl.nix
   ];
-  home.username = "default";
+  home.username = username;
   home.stateVersion = "25.05";
   home.packages = [
     #pkgs.zsh-autosuggestions

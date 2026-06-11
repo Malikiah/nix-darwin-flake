@@ -1,5 +1,5 @@
 #https://nix-darwin.github.io/nix-darwin/manual/index.html
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, username, ... }:
 {
   imports = [
     ./package-management/brew.nix
@@ -37,7 +37,7 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
-  users.users.default.home = "/Users/default";
+  users.users.${username}.home = "/Users/${username}";
 
   system.defaults = {
     WindowManager.StandardHideDesktopIcons = true;

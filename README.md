@@ -26,6 +26,31 @@ is reproducible from this repo.
 The flake exposes a single system output, `darwinConfigurations."macintosh"`,
 which is what `darwin-rebuild` builds and activates.
 
+## Why Homebrew instead of Nix packages
+
+Most user-facing apps and tools here are installed through **Homebrew** rather
+than Nix. On macOS — especially Apple Silicon — a lot of GUI apps, casks, and
+fast-moving CLI tools are poorly supported (or simply broken/outdated) in
+nixpkgs: missing aarch64-darwin builds, unfree/cask-only software, and apps
+that expect to live in `/Applications`. Homebrew handles all of that cleanly,
+so I opted to drive packages through it and keep Nix focused on system
+configuration and declarative settings.
+
+Homebrew is still managed **declaratively and self-maintaining** through
+nix-darwin's `homebrew` module in
+[`package-management/brew.nix`](package-management/brew.nix). The package list
+in that file is the single source of truth, and on every `darwin-rebuild
+switch` the `onActivation` settings keep the machine in sync:
+
+- `upgrade = true` — upgrades all managed formulae/casks on each rebuild.
+- `cleanup = "uninstall"` — removes anything installed by Homebrew that is
+  **not** listed in `brew.nix`, so the file always reflects exactly what's
+  installed.
+
+In other words: `brew.nix` is the maintenance script. Add or remove an entry,
+run `darwin-rebuild switch`, and the system converges to match — no manual
+`brew install` / `brew upgrade` / `brew cleanup` needed.
+
 ## Pre Configuration
 
 Before running the installation you must allow Full Disk access to the terminal you will be installing with
@@ -84,16 +109,40 @@ Then reboot.
 Apply the configuration after editing any `.nix` file:
 
 ```bash
-darwin-rebuild switch
+darwin-rebuild switch --impure
 ```
 
 If you're running it from outside the repo directory, point it at the flake:
 
 ```bash
-darwin-rebuild switch --flake /etc/nix-darwin#macintosh
+darwin-rebuild switch --impure --flake /etc/nix-darwin#macintosh
 ```
 
+### Per-user configuration
+
+The config is **not** pinned to a single username — it resolves the user at
+build time so it applies to whoever runs the rebuild. The flake reads
+`$SUDO_USER` (preferred, since `darwin-rebuild` runs under `sudo`), falling back
+to `$USER`, then to `default`. That resolved name is used for
+`home-manager.users.<user>`, `users.users.<user>.home`, and `home.username`.
+
+Because reading the environment is an impure operation, builds must pass
+`--impure` (the installer already does this). To avoid typing it every time, add
+a shell alias — e.g. in [`home-manager/programs/zsh.nix`](home-manager/programs/zsh.nix):
+
+```nix
+alias drs="sudo darwin-rebuild switch --impure --flake /etc/nix-darwin#macintosh"
+```
+
+If you ever want to pin it back to a fixed name, replace the `username`
+`let`-binding in [`flake.nix`](flake.nix) with a string literal and drop
+`--impure`.
+
 ## Maintaining the flake
+
+> The `darwin-rebuild switch`/`build`/`check` commands below need `--impure`
+> (see [Per-user configuration](#per-user-configuration)). It's omitted from the
+> table for brevity.
 
 | Command | What it does |
 | --- | --- |
